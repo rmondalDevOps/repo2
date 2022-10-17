@@ -6,16 +6,18 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                            }
-        
-	steps('run pwsh file'){
+                 }
+	
+	}
+	stage('run pwsh file'){
+		steps('powershell'){
 		pwsh ''' 
 		#creating a file
 		New-Item -Path /root/hello_powershell.txt -ItemType File
 		Set-Content /root/hello_powershell.txt "Hi, this is a file made from linux powershell file"
 		Get-Content "/root/hello_powershell.txt"
 		'''
-		}
+	    }
 	}
     }
 }
