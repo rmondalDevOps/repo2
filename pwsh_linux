@@ -8,7 +8,7 @@ pipeline {
                 echo 'Hello World'
                             }
         }
-	stage(run pwsh file"){
+	stage('run pwsh file'){
 		pwsh ''' 
 		#creating a file
 		New-Item -Path /root/hello_powershell.txt -ItemType File
