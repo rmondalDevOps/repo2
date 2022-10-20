@@ -1,0 +1,20 @@
+pipeline {
+    agent {label 'Rachita'
+	}
+stages {
+        stage('About the job') {
+            steps {
+                echo "This is to copy a file from GitHub repository to the agent machine"
+            }
+        }
+    }
+    stages {
+        stage('Hello') {
+            steps {
+                powershell '''
+			Invoke-WebRequest -Uri https://github.com/rmondalDevOps/repo2/blob/f8390d6492e54b68250e2c345a8b5f30e16bfef5/install_links.sh -OutFile .\CopiedFiles\install_links_copy.sh
+			'''
+            }
+        }
+    }
+}
