@@ -12,7 +12,7 @@ stages {
         stage('Hello') {
             steps {
                 powershell '''
-			Invoke-WebRequest -Uri https://github.com/rmondalDevOps/repo2/blob/f8390d6492e54b68250e2c345a8b5f30e16bfef5/install_links.sh -OutFile .\CopiedFiles\install_links_copy.sh
+			Invoke-WebRequest -Uri https://github.com/rmondalDevOps/repo2/blob/f8390d6492e54b68250e2c345a8b5f30e16bfef5/install_links.sh -OutFile .\install_links_copy.sh
 			'''
             }
         }
