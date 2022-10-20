@@ -7,8 +7,6 @@ stages {
                 echo "This is to copy a file from GitHub repository to the agent machine"
             }
         }
-    }
-    stages {
         stage('Hello') {
             steps {
                 powershell '''
