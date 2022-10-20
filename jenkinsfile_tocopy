@@ -1,6 +1,5 @@
 pipeline {
-    agent {label 'Rachita'
-	}
+    agent any
 stages {
         stage('About the job') {
             steps {
