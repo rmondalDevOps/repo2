@@ -6,6 +6,28 @@ stages {
                 echo "This is to copy a file from GitHub repository to the agent machine"
             }
         }
+	stage('Check if Git is installed') {
+            steps {
+	    powershell '''
+                $items= Get-ChildItem "C:\Program Files" -recurse | Where-Object {$_.extension -eq ".exe"}
+$score=0
+Foreach($item in $items){
+    if($item -like "*Git*"){
+        $score+=1
+        break
+    }
+   }
+   if($score -ge 1)
+   {
+   Write-Host "Git is installed"
+   }
+    else{
+    Write-Host "Git is not installed"
+    } 
+    '''
+
+            }
+        }
         stage('Hello') {
             steps {
                 powershell '''
