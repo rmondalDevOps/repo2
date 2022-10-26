@@ -22,7 +22,12 @@ Foreach($item in $items){
    Write-Host "Git is installed"
    }
     else{
-    Write-Host "Git is not installed"
+    Write-Host "Git is not installed....Installing Git through Chocolatey"
+    Set-ExecutionPolicy Bypass -Scope Process
+    #installing chocolatey
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    #now installing git
+    choco install -y git
     } 
     '''
 
