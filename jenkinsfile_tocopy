@@ -9,7 +9,7 @@ stages {
 	stage('Check if Git is installed') {
             steps {
 	    powershell '''
-                $items= Get-ChildItem "C:\Program Files" -recurse | Where-Object {$_.extension -eq ".exe"}
+                $items= Get-ChildItem "C:\\Program Files" -recurse | Where-Object {$_.extension -eq ".exe"}
 $score=0
 Foreach($item in $items){
     if($item -like "*Git*"){
