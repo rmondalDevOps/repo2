@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Rachita'
+    agent { label 'mcstest96'
     }
 stages {
         stage('About the job') {
