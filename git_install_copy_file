@@ -1,0 +1,51 @@
+pipeline {
+    agent { label 'Rachita'
+    }
+stages {
+        stage('About the job') {
+            steps {
+                echo "This is to copy a file from GitHub repository to the agent machine"
+            }
+        }
+        stage('Check if Git is installed'){
+          steps{
+            Set-ExecutionPolicy Bypass -Scope Process
+            $items= Get-ChildItem "C:\\Program Files" | Where-Object {$_.extension -eq ".exe"}
+            $score=0
+            Foreach($item in $items){
+              if($item -like "*Git*"){
+                 $score+=1
+                 break
+              }
+            }
+           if($score -ge 1)
+           {
+             Write-Host "Git is installed"
+           }
+           else{
+            Write-Host "Git is not installed....Installing Git"
+   # get latest download url for git-for-windows 64-bit exe
+            $git_url = "https://api.github.com/repos/git-for-windows/git/releases/latest"
+            $asset = Invoke-RestMethod -Method Get -Uri $git_url | % assets | where name -like "*64-bit.exe"
+# download installer
+            $installer = "$env:temp\$($asset.name)"
+            Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $installer
+# run installer
+            $git_install_inf = "https://github.com/rmondalDevOps/repo2/blob/ac9a831529b6a719c45c968b724e7d1c79a83c57/install_inf_file.txt"
+            $install_args = "/SP- /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /LOADINF=""$git_install_inf"""
+            Start-Process -FilePath $installer -ArgumentList $install_args -Wait
+             Write-Host Git --version
+            }
+
+          }
+        }
+        stage('copying files') {
+            steps {
+                powershell '''
+			Invoke-WebRequest -Uri https://github.com/rmondalDevOps/repo2/blob/f8390d6492e54b68250e2c345a8b5f30e16bfef5/install_links.sh -OutFile install_links_copy.sh
+			Write-Host "Your file is copied!"
+			'''
+            }
+        }
+    }
+}
