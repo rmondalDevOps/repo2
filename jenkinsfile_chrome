@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'mcstest168'
+    agent { label 'mcstest75'
     }
     stages {
         stage('Fetching from Git ') {
