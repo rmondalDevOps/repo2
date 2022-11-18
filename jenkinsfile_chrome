@@ -5,7 +5,7 @@ pipeline {
         stage('Fetching from Git ') {
             steps {
                 echo 'Getting Jenkins pipeline file file from Github'
-                bat "C:\\jenkins\\workspace\\Wmx_chrome\\jenkinsfile_chrome"
+                bat "C:\\jenkins\\workspace\\Wmx_chrome\\WMX_mcstest168\\PS-Regression-mcstest168\\WMX_MCSTEST168\\WorkflowManager_BatchFiles\\RunAutomationWorkFlow_Chrome"
             }
         }
     }
