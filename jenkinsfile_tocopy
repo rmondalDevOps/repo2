@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+stages {
+        stage('About the job') {
+            steps {
+                echo "This is to copy a file from GitHub repository to the agent machine"
+            }
+        }
+        stage('copying files') {
+            steps {
+                powershell '''
+			Write host "Checking the current user:"
+			whoami
+			'''
+            }
+        }
+    }
+}
