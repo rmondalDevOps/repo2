@@ -1,0 +1,12 @@
+pipeline {
+    agent { label 'mcstest168'
+    }
+    stages {
+        stage('Fetching from Git ') {
+            steps {
+                echo 'Getting Jenkins pipeline file file from Github'
+                bat ""
+            }
+        }
+    }
+}
