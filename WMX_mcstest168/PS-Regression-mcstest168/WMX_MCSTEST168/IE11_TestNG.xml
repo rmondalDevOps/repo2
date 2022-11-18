@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" configfailurepolicy="continue">
+   <!-- Test -->
+	<!-- <listeners>
+		<listener
+			class-name="com.workflowmanager.library.AnnotationTransformer" />
+	</listeners> -->
+  <test thread-count="5" name="TestIE11">  
+ <!--  <parameter name="browser" value="IE11" /> -->
+ <parameter name="platform" value="Desktop" />
+  <!-- <parameter name="platform" value="crossbrowsertestingcloud" /> -->
+    <parameter name="browser" value="InternetExplorer" />
+  <parameter name="version" value="11" />
+ <!--<parameter name="url" value="https://minint-d86jopo.esri.com:6143/geoevent/manager/" />-->
+  <parameter name="url"
+			value="https://ps0004511.esri.com/portal/apps/workflowmanager/" />
+    <classes>
+     <class name="com.workflowmanager.testcases.TestSuite" />
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

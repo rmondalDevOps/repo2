@@ -1,0 +1,15 @@
+<suite name="WorkflowManager Tests">
+  
+  <listeners>
+		<listener
+			class-name="com.workflowmanager.library.AnnotationTransformer" />
+	</listeners><suite-files>
+  <suite-file path="./Chrome_TestNG.xml"/>
+  <suite-file path="./Firefox_TestNG.xml"/>
+  <suite-file path="./Edge_TestNG.xml"/>
+   
+   
+    <!-- <suite-file path="./Edge_TestNG.xml"/>
+    <suite-file path="./IE11_TestNG.xml"/> -->
+  </suite-files>
+</suite>

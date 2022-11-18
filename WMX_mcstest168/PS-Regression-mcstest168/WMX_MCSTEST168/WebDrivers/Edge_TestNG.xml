@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" configfailurepolicy="continue">
+	<!-- Test -->
+	<listeners>
+		<listener
+			class-name="com.workflowmanager.library.AnnotationTransformer" />
+	</listeners>
+	<test thread-count="5" name="TestEdge">
+		<parameter name="platform" value="Desktop" />
+		<parameter name="browser" value="Edge" />
+		<parameter name="version" value="87" />
+		<!-- <parameter name="url" -->
+		<!-- value="https://ps0004406.esri.com/portal/apps/workflow/" /> -->
+		<!-- <parameter name="url" value="https://ps0004511.esri.com/portal/apps/workflowmanager/" 
+			/> -->
+		<parameter name="url"
+			value="https://mcstest62.esri.com/portal/apps/workflowmanager/" />
+		<classes>
+			<class name="com.workflowmanager.testcases.TestSuite" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

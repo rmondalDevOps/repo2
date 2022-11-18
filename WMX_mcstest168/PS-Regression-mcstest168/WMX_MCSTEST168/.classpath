@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/CSVXML"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ExtentReport"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FileUtils"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/POI"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/POI_Common"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/POIOnly"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/REST"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium_314"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TestNG"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Workflow_AllJars"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Alljars"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
